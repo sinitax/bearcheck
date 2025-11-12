@@ -1,5 +1,5 @@
-from typing import Literal, assert_type
-from bearcheck import Check, bearcheck, beartest
+from typing import TYPE_CHECKING, Any, Literal, assert_type
+from bearcheck import Check, CheckType, bearcheck, beartest
 from beartype.roar import BeartypeDoorHintViolation
 import pytest
 
@@ -25,3 +25,9 @@ def test_missing_generic() -> None:
         bearcheck(123, "bla")  # type: ignore
     with pytest.raises(ValueError):
         beartest(123, "bla")  # type: ignore
+
+
+if TYPE_CHECKING:
+
+    def wrap(a: Any, check: type[Check[CheckType]]) -> CheckType:
+        return bearcheck(a, check)
