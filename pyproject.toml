@@ -3,6 +3,7 @@ name = "bearcheck"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
+license = "MIT"
 authors = [
     { name = "Louis Burda", email = "dev@sinitax.com" }
 ]
@@ -20,4 +21,5 @@ dev = [
     "mypy>=1.18.2",
     "pytest>=9.0.0",
     "ruff>=0.14.4",
+    "twine>=6.2.0",
 ]
