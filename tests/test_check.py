@@ -9,3 +9,8 @@ def test_check() -> None:
         bearcheck(123, Check[Literal["a", "b"]])
     b = bearcheck("a", Check[Literal["a", "b"]])
     assert_type(b, Literal["a", "b"])
+
+
+def test_missing_generic() -> None:
+    with pytest.raises(ValueError):
+        bearcheck(123, Check)

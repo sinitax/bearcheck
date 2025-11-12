@@ -7,7 +7,7 @@ class Check[A]:  # type: ignore
 
 
 def bearcheck[T](a: Any, check: type[Check[T]]) -> T:
-    args = getattr(check, "__args__")
+    args = getattr(check, "__args__", None)
     if args is None:
         raise ValueError("Check class must be templated e.g. Check[int | str]")
     die_if_unbearable(a, args[0])
