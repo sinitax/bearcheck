@@ -13,6 +13,7 @@ def bearcheck[T](a: Any, check: type[Check[T]]) -> T:
     die_if_unbearable(a, args[0])
     return cast(T, a)
 
+
 def beartest[T](a: Any, check: type[Check[T]]) -> T | None:
     args = getattr(check, "__args__", None)
     if args is None:
