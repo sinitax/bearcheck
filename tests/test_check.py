@@ -19,3 +19,9 @@ def test_test() -> None:
 def test_missing_generic() -> None:
     with pytest.raises(ValueError):
         bearcheck(123, Check)
+    with pytest.raises(ValueError):
+        beartest(123, Check)
+    with pytest.raises(ValueError):
+        bearcheck(123, "bla")  # type: ignore
+    with pytest.raises(ValueError):
+        beartest(123, "bla")  # type: ignore
