@@ -1,3 +1,3 @@
-from .check import bearcheck, Check
+from .check import bearcheck, beartest, Check
 
-__all__ = ["bearcheck", "Check"]
+__all__ = ["bearcheck", "beartest", "Check"]
