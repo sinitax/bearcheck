@@ -27,4 +27,4 @@ var = check_type("a", Literal["a", "b"])
 reveal_type(var)  # Type of "var" is "Any"
 ```
 
-`type_check()` returns *Any* if the type hint is not primitive, a common pitfall!
+`type_check()` returns *Any* if the type hint is not primitive.
